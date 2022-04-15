@@ -1,1 +1,1 @@
- ["[]thirdtest()](https://www.apple.com/safari) 
+["[]thirdtest()](https://www.apple.com/safari) 
