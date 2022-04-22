@@ -76,4 +76,12 @@ public class MarkdownParseTest {
         assertEquals("There should be nothing in the arrayList of links",0,links.size());
     }
     
+    @Test
+    public void testfile7() throws IOException
+    {
+        Path fileName = Path.of("/Users/bryan/Documents/GitHub/markdown-parser/test-file6.md");
+        String fileContent = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(fileContent);
+        assertEquals("There should be nothing in the arrayList of links",0,links.size());
+    }
 }
