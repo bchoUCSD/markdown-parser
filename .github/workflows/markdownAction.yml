@@ -1,6 +1,8 @@
 name: markDownAction.ynml
 on: [push]
+workflow_dispatch:
 jobs:
+  build:
   theAction:
    runs-on: ubuntu-latest
    steps:
