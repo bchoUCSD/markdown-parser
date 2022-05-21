@@ -93,4 +93,44 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         assertEquals("There should be nothing in the arrayList",1,links.size());
     }
+
+    @Test
+    public void snippet1Test() throws IOException
+    {
+        Path fileName = Path.of("/Users/bryan/Documents/GitHub/markdown-parser/snippet1Lab4.md");
+        String fileContent = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(fileContent);
+        String[] exp = {"`google.com","google.com","ucsd.edu"};
+        for(int i = 0; i< 3; i++)
+        {
+            assertEquals(exp[i], links.get(i));
+        }
+    }
+
+    @Test
+    public void snippet2Test() throws IOException
+    {
+        Path fileName = Path.of("/Users/bryan/Documents/GitHub/markdown-parser/snippet2Lab4.md");
+        String fileContent = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(fileContent);
+        String[] exp = {"a.com","a.com(())","example.com"};
+        for(int i = 0; i< 3; i++)
+        {
+            assertEquals(exp[i], links.get(i));
+        }
+    }
+
+    @Test
+    public void snippet3Test() throws IOException
+    {
+        Path fileName = Path.of("/Users/bryan/Documents/GitHub/markdown-parser/snippet3Lab4.md");
+        String fileContent = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(fileContent);
+        String[] exp = {"https://www.twitter.com",
+            "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule","https://cse.ucsd.edu/"};
+        for(int i = 0; i< 3; i++)
+        {
+            assertEquals(exp[i], links.get(i));
+        }
+    }
 }
