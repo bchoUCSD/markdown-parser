@@ -97,7 +97,7 @@ public class MarkdownParseTest {
     @Test
     public void snippet1Test() throws IOException
     {
-        Path fileName = Path.of("snippet1Lab4.md");
+        Path fileName = Path.of("snippet1lab4.md");
         String fileContent = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         String[] exp = {"`google.com","google.com","ucsd.edu"};
@@ -110,7 +110,7 @@ public class MarkdownParseTest {
     @Test
     public void snippet2Test() throws IOException
     {
-        Path fileName = Path.of("snippet2Lab4.md");
+        Path fileName = Path.of("snippet2lab4.md");
         String fileContent = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         String[] exp = {"a.com","a.com(())","example.com"};
@@ -124,7 +124,7 @@ public class MarkdownParseTest {
     @Test
     public void snippet3Test() throws IOException
     {
-        Path fileName = Path.of("snippet3Lab4.md");
+        Path fileName = Path.of("snippet3lab4.md");
         String fileContent = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         String[] exp = {"https://www.twitter.com",
