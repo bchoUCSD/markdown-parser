@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.commonmark.node.*;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
@@ -9,9 +11,13 @@ class TryCommonMark {
         HtmlRenderer renderer = HtmlRenderer.builder().build();
         System.out.println(renderer.render(document));  // "<p>This is <em>Sparta</em></p>\n"
         Node node = parser.parse("Example\n=======\n\nSome more text");
+
+        ArrayList<String> list = new ArrayList<>();
         WordCountVisitor visitor = new WordCountVisitor();
-        node.accept(visitor);
-        System.out.println(visitor.wordCount);  // 4
+        Link theLink = new Link("ucsd.edu","UCSD");
+        theLink.accept(visitor);
+        System.out.println(theLink.getDestination());  // 4
+        
     }
 }
 
