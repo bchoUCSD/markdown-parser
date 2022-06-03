@@ -114,6 +114,7 @@ public class MarkdownParseTest {
         String fileContent = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         String[] exp = {"a.com","a.com(())","example.com"};
+        assertEquals(exp[2], links.get(2));
         for(int i = 0; i< 3; i++)
         {
             assertEquals(exp[i], links.get(i));
@@ -128,6 +129,9 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(fileContent);
         String[] exp = {"https://www.twitter.com",
             "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule","https://cse.ucsd.edu/"};
+            String s1 = exp[1];
+            String s2 = links.get(1);
+        assertEquals(s1,s2);
         for(int i = 0; i< 3; i++)
         {
             assertEquals(exp[i], links.get(i));
